@@ -97,6 +97,7 @@ namespace lab6
             txtSearch.Clear();
             txtNewAuthorName.Clear();
             txtNewBookTitle.Clear();
+        }
 
         private void Add_Click(object sender, EventArgs e)
         {
