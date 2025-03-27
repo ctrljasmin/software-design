@@ -168,21 +168,25 @@ namespace lab7
                     while ((line = await reader.ReadLineAsync()) != null)
                     {
                         var elements = line.Split(" by ");
-                        var newAuthor = new Author()
+                        if (elements.Length == 2)
                         {
-                            Name = elements[1]
-                        };
-                        var newBook = new Book()
-                        {
-                            Title = elements[0],
-                            Author = newAuthor
-                        };
-                        books.Add(newBook);
+                            var newAuthor = new Author()
+                            {
+                                Name = elements[1]
+                            };
+                            var newBook = new Book()
+                            {
+                                Title = elements[0],
+                                Author = newAuthor
+                            };
+                            books.Add(newBook);
+                        }
                     }
                     await ImportBooksAsync(books);
                 }
             }
         }
+
 
         private async void btnPreviousPage_Click_1(object sender, EventArgs e)
         {
